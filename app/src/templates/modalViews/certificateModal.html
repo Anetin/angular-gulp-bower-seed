@@ -1,0 +1,28 @@
+<div class="modal-dialog" role="document" ng-controller="uploadCertCtrl">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h5 class="modal-title" id="myModalLabel"><span class='iconfont icon-addfolder ver-mid'></span><span class='p-lr-10'>输入文件信息</span></h5>
+        </div>
+        <div class="modal-body" id="myModalBody">
+            <form id="uploadCert">
+                <ul style='width:80%;margin:0 10%;'>
+                    <li class='f-s-14 p-tb-5'><span class='p-lr-10'>文件名称</span> <input type='file' style='display:inline' name="file-certify"></li>
+                    <li class="p-l-80"><label id="fileCertify" class="f-col-red f-w-l f-s-12">该项不能为空！</label></li>
+                    <li class='f-s-14 p-tb-5'><span class='p-lr-10'>文件名称</span> <input type='text' name="file-name" ng-model="fileName"></li>
+                    <li class="p-l-80"><label ng-show="!fileName" class="f-col-red f-w-l f-s-12">该项不能为空！</label></li>
+                    <li class='f-s-14 p-tb-5'><span class='p-lr-10'>上传人员</span><label class="inline-block" style="margin-left:4px;">{{username}}</label></li></li>
+                    <p class='text-center' style='padding:5px 0'>请上传.jpg、.jepg、.gif、.png、.pdf为后缀的文件</p>
+                    <section style='position:relative;width:300px;height:40px;margin:10px auto'>
+                        <button type='submit' class='btn btn-primary' style='position:absolute;left:0;padding:8px 30px;background-color: #3598DB;border: none' ng-click="uploadCert()">确认</button>
+                        <button type='button' class='btn btn-default border' data-dismiss='modal' style='position:absolute;right:0;padding:8px 30px;'>取消</button>
+                    </section>
+                    <p class="text-center" ng-show="status == 1" style="color:green">{{msg}}</p>
+                    <p class="text-center" ng-show="status != 1" style="color:red">{{msg}}</p>
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>
+
+

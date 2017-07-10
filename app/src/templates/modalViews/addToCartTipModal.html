@@ -1,0 +1,13 @@
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title p-lr-10" id="myModalLabel" style="font-weight: bold;font-size: 14px;color: #0acca6"><span class="glyphicon glyphicon-exclamation-sign m-r-10"></span>提示</h2>
+        </div>
+        <div class="modal-body" id="myModalBody">
+            <p style="height:40px;line-height:40px;margin-bottom:15px;">{{data.content}}</p>
+            <div class="t-a-r">
+                <button type='button' style="padding:5px 30px;" class='btn btn-success border' data-dismiss='modal' ng-click="data.goTo && jumpTo(data.goTo)">确定</button>
+            </div>
+        </div>
+    </div>
+</div>

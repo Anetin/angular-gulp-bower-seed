@@ -1,0 +1,9 @@
+logs/*
+!.gitkeep
+node_modules/
+app/bower_components/
+.idea
+dist/
+tmp/
+#app/data/
+

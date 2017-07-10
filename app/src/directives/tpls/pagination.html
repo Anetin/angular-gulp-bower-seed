@@ -1,0 +1,14 @@
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        <li ng-class="{true:'disabled'}[curPage == 1]">
+            <a ng-click="getPreData()">&laquo;</a>
+        </li>
+        <li ng-repeat="list in lists" ng-click="getData($event,list.num+1)">
+            <span ng-class="{true:'pageActive'}[curPage == list.num+1]">{{list.num + 1}}</span>
+        </li>
+        <li ng-class = "{true:'disabled'}[curPage == pageNum]">
+            <a ng-click="getNextData()">&raquo;</a>
+        </li>
+    </ul>
+    <label>当前显示{{showDataNum}}条 ， 共{{options.total_items_num}}条</label>
+</nav>
