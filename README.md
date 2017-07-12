@@ -120,15 +120,18 @@ angular-gulp-bower-seed
 │       │      app.css
 │       │      directives.css
 │       │      page1.css
+│       │      page2.css
 │       │
 │       └─templates  //项目视图文件夹
 │           │  app.html
 │           │  login.html
 │           │  noRight.html
 │           │
-│           ├─modalViews  //按业务划分视图文件夹
+│           ├─modalViews  //模态框视图文件夹
 │           │
-│           └─page1Views
+│           ├─page1Views  //按业务划分视图1文件夹
+│           │
+│           └─page2Views  //按业务划分视图2文件夹
 │
 │
 ├─appDist  //项目编译打包后生成目录
