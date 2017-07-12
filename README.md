@@ -57,6 +57,7 @@ npm run serve
 ```
 
 ### [项目结构](https://github.com/Anetin/angular-gulp-bower-seed/blob/master/angular-gulp-bower-seed.png)
+```
 angular-gulp-bower-seed
 │  .bowerrc  //bower安装包目录配置
 │  .gitignore
@@ -155,6 +156,7 @@ angular-gulp-bower-seed
 │          app.min.js
 │
 └─vendor
+```
 
 
 
