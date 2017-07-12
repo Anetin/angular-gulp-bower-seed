@@ -3,7 +3,8 @@ logs/*
 node_modules/
 app/bower_components/
 .idea
-dist/
+appDist/
 tmp/
 #app/data/
+tree.txt
 

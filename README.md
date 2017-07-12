@@ -57,6 +57,105 @@ npm run serve
 ```
 
 ### [项目结构](https://github.com/Anetin/angular-gulp-bower-seed/blob/master/angular-gulp-bower-seed.png)
+angular-gulp-bower-seed
+│  .bowerrc  //bower安装包目录配置
+│  .gitignore
+│  angular-gulp-bower-seed.png
+│  bower.json
+│  gulpfile.js  //gulp配置文件，打包处理，开启服务等等
+│  LICENSE
+│  mockAPI.js  //构造.json数据文件后，通过读取文件方式模拟API请求，在前后端开发进度不一致时非常有用
+│  package.json
+│  README.md
+│
+├─app  //项目开发目录
+│   │  angular.png.ico
+│   │  app.js  //angular项目公共配置，包括主模块创建，路由配置，http拦截处理等
+│   │  index-dist.html  // 供gulp编译，引入打包后的文件（script/styles/fonts）
+│   │  index.html  SPA项目入口
+│   │
+│   ├─bower_components //bower管理的依赖库
+│   │  ├─angular
+│   │  ├─angular-bootstrap
+│   │  ├─angular-cookies
+│   │  ├─angular-local-storage
+│   │  ├─angular-md5
+│   │  ├─angular-resource
+│   │  ├─angular-route
+│   │  ├─angular-ui
+│   │  ├─angular-ui-router
+│   │  ├─bootstrap
+│   │  └─jquery
+│   ├─data //构建json格式的静态数据（mock datas）
+│   │      csrfToken.json
+│   │      login.json
+│   │
+│   ├─public //项目公共资源，包括字体，图片
+│   │  ├─css
+│   │  ├─fonts
+│   │  └─images
+│   │
+│   └─src //项目源代码
+│       ├─controllers  //控制器相关代码，语义化命名
+│       │      appControllers.js
+│       │
+│       ├─directives  //自定义指令相关代码
+│       │  │  directives.js  //指令脚本
+│       │  │
+│       │  └─tpls   //指令模板文件夹
+│       │          datepicker.html
+│       │          modal.html
+│       │          pagination.html
+│       │
+│       ├─filters //过滤器代码
+│       │      filters.js
+│       │
+│       ├─services //服务代码
+│       │      apiServices.js //与API请求相关服务
+│       │      app.util.js  //公共服务
+│       │      services.js  //其他
+│       │
+│       ├─styles  //项目样式文件夹
+│       │      app.css
+│       │      directives.css
+│       │      page1.css
+│       │
+│       └─templates  //项目视图文件夹
+│           │  app.html
+│           │  login.html
+│           │  noRight.html
+│           │
+│           ├─modalViews  //按业务划分视图文件夹
+│           │
+│           └─page1Views
+│
+│
+├─appDist  //项目编译打包后生成目录
+│  angular.png.ico
+│  index.html
+│
+├─public
+│  ├─css
+│  │      iconfont.css
+│  │
+│  ├─fonts
+│  │      iconfont.eot
+│  │      iconfont.svg
+│  │      iconfont.ttf
+│  │      iconfont.woff
+│  │
+│  └─images
+│          loading.gif
+│
+├─static
+│  ├─css
+│  │      app.min.css
+│  │
+│  └─js
+│          app.min.js
+│
+└─vendor
+
 
 
 

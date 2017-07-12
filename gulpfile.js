@@ -21,7 +21,7 @@ var reload = browserSync.reload;
 var url = require('url');
 var mockApi = require('./mockApi');
 
-var distFolderUrl = "userAppDist"
+var distFolderUrl = "appDist";
 gulp.task('clean', function () {
   return require('del')([distFolderUrl + '/**','tmp/**','dist/**']);
 });
