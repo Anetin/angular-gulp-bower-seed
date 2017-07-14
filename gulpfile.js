@@ -14,6 +14,8 @@ var csso = require('gulp-csso');
 var concat = require('gulp-concat');
 var rename = require("gulp-rename");
 const babel = require('gulp-babel');
+var less = require('gulp-less');
+var sourcemaps = require('gulp-sourcemaps');
 
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
@@ -117,13 +119,20 @@ gulp.task('vendor', function () {
     .pipe(gulp.dest(distFolderUrl + '/vendor'))
 });
 
+gulp.task('less', function () {
+  return gulp.src('./app/src/styles/less/*.less')
+    .pipe(less())
+    .pipe(sourcemaps.write('./app/src/styles'))
+    .pipe(gulp.dest('./app/src/styles'))
+});
+
 
 var cssList = [
   './app/src/styles/app.css',
   './app/src/styles/*.css'
 ];
 
-gulp.task('css', function() {
+gulp.task('css', ['less'], function() {
   return gulp.src(cssList)
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
@@ -236,8 +245,8 @@ gulp.task('default', ['clean'], function () {
       'app/data/**/*'
     ]).on('change', reload);
 
-    gulp.watch('app/src/**/*.less', ['styles', reload]);
-    gulp.watch('bower.json', ['fonts', reload]);
+    gulp.watch('app/src/**/*.less', ['css', reload]);
+    // gulp.watch('bower.json', ['fonts', reload]);
   });
 
   gulp.task('serve-release',  function () {

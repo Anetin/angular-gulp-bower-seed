@@ -2,9 +2,29 @@
  * Created by oxygen on 2017/4/11.
  */
 angular.module('myApp.services', [])
-    .service("transferData",function(){
+    .service("dashboardNavService",function(){
         return {
-            proCsv : {}
+            dashboard_nav_datas:[{
+                "style":"glyphicon glyphicon-eye-open",
+                "name":"应用监控",
+                "contents":[{
+                    "name":"会员流通情况",
+                    "action":"app.monitor.member",
+                    "permission": '1'
+                },{
+                    "name":"订单流通情况",
+                    "action":"app.monitor.order",
+                    "permission": '2'
+                },{
+                    "name":"前置节点监控",
+                    "action":"app.monitor.frontNodes",
+                    "permission": '3'
+                },{
+                    "name":"监控节点维护",
+                    "action":"app.monitor.monitorNodes",
+                    "permission": '4'
+                }]
+            }]
         }
     })
     .factory('Excel', function ($window) {

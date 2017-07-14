@@ -41,7 +41,6 @@ angular.module('myApp', [
                console.log("用户无权限访问");
                $rootScope.$broadcast("denied");
              }
-
              return $q.reject(err);
         }
      };
@@ -70,16 +69,16 @@ angular.module('myApp', [
               }
           }
       })
-      .state("app",{
-          url:"/app",
-          templateUrl: "./src/templates/app.html",
+      .state("monitor",{
+          url:"/monitor",
+          templateUrl: "./src/templates/dashboard.html",
       })
-      .state("app.denied",{
+      .state("monitor.denied",{
           url:"/denied",
           templateUrl: "./src/templates/noRight.html",
       })
-      .state("app.page1",{
-          url:"/page1",
+      .state("monitor.member",{
+          url:"/member",
           views:{
               "":{
                   template:"<div ui-view='detail'></div>"

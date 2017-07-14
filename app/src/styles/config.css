@@ -1,0 +1,40 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 0.42666667rem;
+  background-color: #fff;
+}
+button {
+  outline-width: 0;
+  border-width: 0;
+}
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.f-l {
+  float: left;
+}
+.f-r {
+  float: right;
+}
+.clear {
+  clear: both;
+  overflow: hidden;
+}
+.w-225 {
+  width: 225px;
+}
+.w-50 {
+  width: 50px;
+}
+.flex-1 {
+  flex: 1;
+}

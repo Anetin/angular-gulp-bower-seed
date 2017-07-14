@@ -1,0 +1,44 @@
+.sec_drop{
+    cursor: pointer;
+}
+
+.sec_drop .active{
+    background-color: #5A5C61;
+    color:#FFF;
+}
+
+.sec_drop:hover div, .sec_drop>li>ul>li:hover{
+    background:#5A5C61;
+    color:#FFF;
+}
+
+.sec_drop>li{
+    font-size:14px;
+    color:#B9B0B0;
+}
+
+.sec_drop>li>ul>li{
+    height:30px;
+    line-height:30px;
+    padding-left:60px;
+    font-size:12px;
+}
+
+.sec_drop>li span:nth-of-type(1){
+    display: inline-block;
+    margin:12px 20px;
+    font-size: 14px;
+    top: 2px;
+}
+.arr {
+    position: absolute;
+    right: 11px;
+    top: 14px;
+    display: block;
+    width: 12px;
+    height: 14px;
+    margin: 0;
+    vertical-align: middle;
+    font-weight: 100;
+    cursor: pointer;
+}

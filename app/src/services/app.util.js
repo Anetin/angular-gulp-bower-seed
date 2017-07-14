@@ -41,14 +41,8 @@ angular.module('app.services.util', [])
             }
        };
     })
-  .constant('dls_url','http://61.147.182.167:80')
   .constant('API','/api') //开发环境
    //.constant('API','') //部署
-  .constant('DLS_years',["2016","2017","2018","2019","2020","2021","2022","2023","2024"])
-  .constant('DLS_months',{
-            "num":["01","02","03","04","05","06","07","08","09","10","11","12"],
-            "name":["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"]
-  })
   .constant('AUTH_EVENTS', {
     loginSuccess: 'auth-login-success',
     loginFailed: 'auth-login-failed',
@@ -148,16 +142,5 @@ angular.module('app.services.util', [])
     return this;
   }]);
 
-Array.prototype.unique = function(){
-    var array = this;
-    var n = {}, r = [], len = array.length;
-    for (var i = 0; i < array.length; i++) {
-        if(!n[array[i]]){
-            r.push(array[i]);
-            n[array[i]] = true;
-        }
-    }
-    return r;
-}
 
 

@@ -30,6 +30,39 @@ angular.module('myApp.directives', [
             }
           };
         })
+        .directive("secondaryDropdown",function($state){     //二级下拉菜单，必须满足data的格式[{style:图片样式，name：tab名称，content：[{name:二级菜单名},...]}...]
+            return{
+                restrict:'E',
+                replace: false,
+                scope:{
+                    data:"=",
+                    curState:"=",
+                },
+                controller:function($scope){
+                    var viewObj = {};
+                    $scope.datas = $scope.data;
+                    $scope.setView = function(view){
+                        if(!viewObj[view]){
+                            viewObj[view] = true;
+                        }else{
+                            viewObj[view] = !viewObj[view];
+                        }
+                        $scope.viewObj = viewObj;
+                   };
+
+                   $scope.$watch("curState",function(){
+                       $scope.selectData = $scope.curState;
+                   })
+
+                   $scope.curView = function($event,value){
+                       $scope.selectData = value;
+                       $state.go(value)
+                       $scope.$emit("changeViewState",value);
+                   }
+                },
+                templateUrl:"src/directives/tpls/secondary_dropdown.html"
+            }
+        })
         .directive("inputTab",function(){
             return{
                 restrict:'A',

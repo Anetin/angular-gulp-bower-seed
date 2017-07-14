@@ -1,0 +1,51 @@
+<article ng-controller="dashboardCtrl" style="height: 100vh;">
+  <header>
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img src="/public/images/Chinadep_logo.gif" alt="上海数据交易中心-监控平台">
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>需方ID</a></li>
+            <li><a href="#">注销</a></li>
+            <!-- <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li> -->
+          </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+  </header>
+
+  <div class="flex-container">
+      <aside ng-if="!aside.shortType" class="aside w-225" ng-controller="dashboardAsideCtrl">
+          <secondary-dropdown data = "dashboard_nav_datas" cur-state="curState"></secondary-dropdown>
+      </aside>
+
+      <aside ng-if="!!aside.shortType" class="aside w-50" ng-controller="dashboardAsideCtrl" ng-include="'src/directives/tpls/aside_short.html'">
+      </aside>
+
+      <div class="flex-1 bg-2 relative ovf-h" ng-controller="dashboardMainCtrl" ng-init="curView = 'mall'">
+          <div ui-view=""></div>
+          <footer class="dls-alert">
+              <p class="">
+                  <span class="f-s-12 f-col-1">© 2016 上海数据交易中心有限公司</span>
+                  <a class="f-s-12" href="http://www.miibeian.gov.cn/" target="_blank">沪ICP备沪ICP备17003045号-1</a>
+                  <a href="http://www.sgs.gov.cn/shaic/" target="_blank">
+                      <img class='ver-mid' src="http://mcc.chinadep.com/static/chinadep/image/gongshang.png" alt="工商">
+                  </a>
+              </p>
+          </footer>
+      </div>
+  </div>
+</article>
