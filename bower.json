@@ -13,7 +13,8 @@
     "angular-ui": "latest",
     "angular-ui-router": "latest",
     "angular-ui-grid": "^4.0.4",
-    "angular-resource": "^1.6.4"
+    "angular-resource": "^1.6.4",
+    "angular-chart.js": "^1.1.1"
   },
   "devDependencies": {
     "angular-cookies": "^1.6.4",

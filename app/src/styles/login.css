@@ -1,0 +1,215 @@
+.login{
+    width:100vw;
+    height:100vh;
+    background-color: #337fb3;
+    background:url("../../public/images/Chinadep_login.jpg") center 35% no-repeat;
+}
+
+.login .footer{
+    position:fixed;
+    bottom:0;
+    width:100vw;
+    height:38px;
+    text-align: center;
+    line-height: 38px;
+    background-color: white;
+    color: #868282;
+    font-size:14px;
+}
+
+.login .footer a{
+    color: inherit;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.login .footer img{
+    color: transparent;
+    font-size: 0;
+    vertical-align: middle;
+}
+
+.login .login-block{
+    position:absolute;
+    width:500px;
+    height:400px;
+    // margin:calc((50vh - 10px) - 250px) 0 0 calc(50vw - 250px);
+    // margin:-webkit-calc((50vh - 10px) - 250px) 0 0 -webkit-calc(50vw - 250px);
+    // margin:-moz-calc((50vh - 10px) - 250px) 0 0 -moz-calc(50vw - 250px);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login .panel-body{
+    padding:0;
+}
+
+.login .login-tab{
+    width:499px;
+    height:50px;
+    border-bottom: 1px solid #DED7D7;
+}
+
+.login .login-tab .login-pills{
+    width:168px;
+    display:inline-block;
+    line-height:50px;
+    text-align:center;
+    vertical-align:middle;
+    font-size:16px;
+}
+
+.login .login-tab .login-pills.active{
+    color: #2e9bcf;
+    border-bottom: 3px solid #2e9bcf;
+    cursor: default;
+}
+
+.login .login-logo{
+    background: url("../../public/images/Chinadep_logo.gif") center 35% no-repeat;
+    height: 128px;
+    text-align: center;
+}
+
+.login .login-item {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.login .login-label {
+    width: 105px;
+    padding-right: 15px;
+    text-align: right;
+    color: #868282;
+    display: inline-block;
+    line-height: 45px;
+    float: left;
+}
+
+.login .need {
+    color: #F00;
+    position: relative;
+    left: 5px;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+.login .login-input {
+    height: 45px;
+    line-height: 45px;
+    width: 310px;
+    padding: 0 5px;
+    margin: 0;
+    border: 1px solid #b9b0b0;
+    display: inline-block;
+}
+
+.login .iconfont {
+    font-size: 30px;
+    color: #b9b0b0;
+    margin-right: 5px;
+    vertical-align: -7px;
+}
+
+.login .login-input-text{
+    border: none !important;
+    vertical-align: middle;
+    height: 36px;
+    width: 260px;
+}
+
+.login .vcode-input{
+    display: inline-block;
+}
+
+.login .login-token{
+    height: 45px;
+    line-height: 45px;
+    width: 190px;
+    padding: 0 5px;
+    margin: 0;
+    border: 1px solid #b9b0b0;
+}
+
+
+.login-token input {
+    border: none !important;
+    vertical-align: middle;
+    height: 36px;
+    width: 140px;
+}
+
+.login input:focus{
+    outline:none;
+}
+
+.login .login-input.active{
+    border:1px #25A9DF solid;
+}
+
+.login .login-btn {
+    // margin-top:-30px;
+    text-align: center;
+    font-family: "microsoft yahei",sans-serif,Arial;
+    font-size: 20px;
+}
+
+.login .login-btn a {
+    display: inline-block;
+    width: 310px;
+    height: 46px;
+    line-height: 46px;
+    color: #FFF;
+    text-decoration: none;
+    background-color: #0072bc;
+    /*border: 1px solid #0072bc;*/
+    border-bottom: 4px solid #005b96;
+    /*margin-left: 22px;*/
+}
+.login-submit {
+    display: inline-block;
+    width: 310px;
+    height: 46px;
+    line-height: 46px;
+    color: #FFF;
+    /*text-decoration: none;*/
+    background-color: #0072bc;
+    border: 1px solid #0072bc;
+    border-bottom: 4px solid #005b96;
+    margin-left: 22px;
+}
+
+.login-cert {
+    // background-color: #27488d;
+    // background: url(code_bg.jpg);
+    height: 45px;
+    line-height: 45px;
+    display: inline-block;
+    font-family: Arial;
+    font-style: italic;
+    color: #0068b7;
+    font-size: 20px;
+    border: 0;
+    letter-spacing: 3px;
+    font-weight: bolder;
+    cursor: pointer;
+    width: 120px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.login-cert .glyphicon-refresh {
+  height: 40px;
+    width: 40px;
+    line-height: 40px;
+    color: #ccc;
+    display: inline-block;
+    z-index: 2;
+    /*margin-left: 30px;*/
+}
+
+.help-valid {
+    padding: 10px 0 0 105px;
+    color: #e54c3e;
+}

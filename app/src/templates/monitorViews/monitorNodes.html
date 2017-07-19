@@ -1,0 +1,81 @@
+<article ng-controller="monitorNodesCtrl" class="monitor-nodes-article">
+  <header>
+    <h3 class="h-title">前置节点维护</h3>
+  </header>
+
+  <div class="items-inline" style="min-width: 1140px;">
+    <div class="flex-item">
+      <span class="item-name" style=" margin-right: 11px">会员:</span>
+      <input type="text"  name="demName" class="item-content" placeholder="请输入订单编号" ng-model="demName" required>
+    </div>
+
+    <div class="flex-item">
+      <span class="item-name">节点类型:</span>
+      <!-- <input type="text"  name="demName" class="item-content" placeholder="请输入订单编号" ng-model="demName" required> -->
+      <select class="form-control item-content" class="edit"  name="add-type" ng-model="edit_type">
+          <option value="" selected="">请选择</option>
+          <option value="单值列表">单值列表</option>
+          <option value="多值列表">多值列表</option>
+          <option value="分段">分段</option>
+          <option value="命中">命中</option>
+          <option value="数据项">数据项</option>
+      </select>
+    </div>
+
+    <div class="flex-item">
+      <span class="item-name">节点编号:</span>
+      <input type="text"  name="demName" class="item-content" placeholder="请输入订单编号" ng-model="demName" required>
+    </div>
+
+
+
+  </div>
+
+  <div class="items-inline" style="min-width: 1200px;">
+    <div class="flex-item">
+      <span class="item-name">节点IP:</span>
+      <input type="text"  name="demName" class="item-content" placeholder="请输入订单编号" ng-model="demName" required>
+    </div>
+
+    <div class="flex-item">
+      <span class="item-name">创建时间:</span>
+      <date-picker class="item-content" dt="dateStar"></date-picker> <span class="item-span">~</span> <date-picker class="item-content" dt="dateEnd"></date-picker>
+    </div>
+
+    <div class="flex-item">
+      <button class="btn btn-primary btn-small">搜索</button>
+      <button class="btn btn-default btn-small">清除</button>
+    </div>
+
+  </div>
+
+  <p class="p-info">共搜索到<span>922</span>条数据</p>
+  <div class="alert alert-info" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <span class="glyphicon glyphicon-info-sign"></span> 已选择<span>5</span>项数据。
+  </div>
+
+  <div class="app-tab">
+    <table class="table table-bordered table-striped">
+        <thead>
+          <tr class="primary">
+            <th></th>
+            <th ng-repeat="title in titles">{{title}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in dataList">
+            <td><input type="checkbox" ng-model="item.checked"/></td>
+            <td>{{item.in_ip}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.svc_type}}</td>
+            <td>{{item.create_time}}</td>
+            <td>{{item.auto}}</td>
+            <td>{{item.status}}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  <pagination  options="pageOptions" cur-page="curPageNum" sum="totalItems"></pagination>
+
+</article>

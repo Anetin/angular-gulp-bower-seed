@@ -39,8 +39,8 @@ span.glyphicon.glyphicon-user {
   width: 100%;
   bottom: 1px;
   height: 50px;
-  background-color: #ffffff;
   border-top: 1px solid #dad9d7;
+  margin-left: -20px;
 }
 .dls-alert p:nth-of-type(1) {
   float: right;

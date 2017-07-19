@@ -1,1 +1,50 @@
-Welcome to angular project!!!
+<div ui-view="login" class="login" ng-controller="loginCtrl" ng-submit="login(credentials)" novalidate>
+    <form name="loginForm" class="panel login-block">
+        <div class="panel-body">
+            <ul class="login-tab">
+                <li class="login-pills active" style="font-weight: bold;">监控系统</li>
+            </ul>
+            <div class="login-logo"></div>
+            <div input-tab>
+                <div class="login-item">
+                    <span class="login-label">用户名<b class="need">*</b></span>
+                    <div class="login-input">
+                    <span class="iconfont icon-login-account"></span><input type="text" class="login-input-text" ng-model="credentials.username" placeholder="用户名">
+                    </div>
+                </div>
+                <div class="login-item"><span class="login-label">密码<b class="need">*</b></span><div class="login-input"><span class="iconfont icon-login-password"></span><input type="password" class="login-input-text" ng-model="credentials.pwdInput" placeholder="密码"></div>
+                </div>
+            </div>
+
+            <!-- <div class="login-item">
+                <span class="login-label">验证码</span>
+                <div class="vcode-input">
+                    <div class="login-token"><span class="iconfont icon-login-token"></span><input class="CanvasInput" ng-model="credentials.code" type="text" id="keyInput" maxlength="4" placeholder="验证码" ></div>
+                </div>
+                <div class="login-cert">
+                    <span class="code" id="checkCode" ng-click="createCode()" ng-bind="validCode"></span>
+                    <span class="glyphicon glyphicon-refresh" ng-click="createCode()"></span>
+                </div>
+            </div> -->
+
+            <div class="login-btn">
+                <button  title="登录" class="login-submit" type="submit" id="logIn">登录</button>
+
+            </div>
+            <div class="help-valid">
+                <span ng-if="credentialsShow">用户名或密码错误！</span>
+                <span ng-if="codeShow">验证码错误！</span>
+            </div>
+        </div>
+    </form>
+
+    <div class="footer">
+        <p class="text-center">
+            <span>© 2016 上海数据交易中心有限公司</span>
+            <a href="http://www.miibeian.gov.cn/" target="_blank">沪ICP备沪ICP备17003045号-1</a>
+            <a href="http://www.sgs.gov.cn/shaic/" target="_blank">
+                <img src="http://mcc.chinadep.com/static/chinadep/image/gongshang.png" alt="工商">
+            </a>
+        </p>
+    </div>
+</div>

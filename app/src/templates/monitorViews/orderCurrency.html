@@ -1,0 +1,129 @@
+<article ng-controller="orderCtrl" class="order-article">
+  <div class="items-inline" style="min-width: 1040px;">
+    <div class="flex-item">
+      <span class="item-name">设置起始日期:</span>
+      <date-picker class="item-content" dt="dateStar"></date-picker>
+    </div>
+
+    <div class="flex-item">
+      <span class="item-name">设置终止日期:</span>
+      <date-picker class="item-content" dt="dateEnd"></date-picker>
+    </div>
+
+      <div class="flex-item">
+        <span class="item-name">订单编号:</span>
+        <input type="text"  name="demName" class="item-content" placeholder="请输入订单编号" ng-model="demName" required>
+      </div>
+
+      <div class="flex-item">
+        <button class="btn btn-default btn-small">查询</button>
+      </div>
+  </div>
+
+  <div class="items-inline">
+
+    <div class="flex-item flex-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">CTN20170418000014000001090000187</h3>
+        </div>
+        <div class="panel-body">
+          <div class="succ">
+            <p class="status">加载成功</p>
+            <p class="amount">158600</p>
+          </div>
+          <div class="fail">
+            <p class="status">加载失败</p>
+            <p class="amount">376</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-item flex-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">CTN20170418000014000001090000187</h3>
+        </div>
+        <div class="panel-body">
+          <div class="succ">
+            <p class="status">加载成功</p>
+            <p class="amount">158600</p>
+          </div>
+          <div class="fail">
+            <p class="status">加载失败</p>
+            <p class="amount">376</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-item flex-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">CTN20170418000014000001090000187</h3>
+        </div>
+        <div class="panel-body">
+          <div class="succ">
+            <p class="status">加载成功</p>
+            <p class="amount">158600</p>
+          </div>
+          <div class="fail">
+            <p class="status">加载失败</p>
+            <p class="amount">376</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-item flex-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">CTN20170418000014000001090000187</h3>
+        </div>
+        <div class="panel-body">
+          <div class="succ">
+            <p class="status">加载成功</p>
+            <p class="amount">158600</p>
+          </div>
+          <div class="fail">
+            <p class="status">加载失败</p>
+            <p class="amount">376</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+
+
+
+  <div class="app-tab">
+    <table class="table table-bordered table-striped">
+        <thead>
+          <tr class="primary">
+            <th></th>
+            <th ng-repeat="title in titles">{{title}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in dataList">
+            <td><input type="checkbox" ng-model="item.checked"/></td>
+            <td>{{item[1]}}</td>
+            <td>{{item[2]}}</td>
+            <td>{{item[3]}}</td>
+            <td>{{item[4]}}</td>
+            <td>{{item[5]}}</td>
+            <td>{{item[6]}}</td>
+            <td>{{item[7]}}</td>
+            <td>{{item[8]}}</td>
+            <td>{{item[9]}}</td>
+            <td>{{item[10]}}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  <pagination  options="pageOptions" cur-page="curPageNum" sum="totalItems"></pagination>
+
+</article>

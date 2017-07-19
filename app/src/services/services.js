@@ -9,19 +9,19 @@ angular.module('myApp.services', [])
                 "name":"应用监控",
                 "contents":[{
                     "name":"会员流通情况",
-                    "action":"app.monitor.member",
+                    "action":"monitor.member",
                     "permission": '1'
                 },{
                     "name":"订单流通情况",
-                    "action":"app.monitor.order",
+                    "action":"monitor.order",
                     "permission": '2'
                 },{
                     "name":"前置节点监控",
-                    "action":"app.monitor.frontNodes",
+                    "action":"monitor.frontNodes",
                     "permission": '3'
                 },{
                     "name":"监控节点维护",
-                    "action":"app.monitor.monitorNodes",
+                    "action":"monitor.monitorNodes",
                     "permission": '4'
                 }]
             }]

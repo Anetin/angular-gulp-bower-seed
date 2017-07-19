@@ -219,7 +219,7 @@ gulp.task('default', ['clean'], function () {
   gulp.task('serve',  function () {
     browserSync({
       notify: false, // Don't show any notifications in the browser.
-      port: 8081,
+      port: 8082,
       open: false,
       server: {
         baseDir: ['app'],
@@ -252,14 +252,13 @@ gulp.task('default', ['clean'], function () {
   gulp.task('serve-release',  function () {
     browserSync({
       notify: false,
-      port: 8081,
+      port: 8082,
       server: {
         baseDir: [distFolderUrl]
       }
     });
 
   });
-
 
 
 

@@ -8,14 +8,19 @@ angular.module('myApp', [
   'myApp.directives',
   'app.services.util',
   'myApp.appControllers',
+  'myApp.monitorControllers',
   'myApp.services',
   'app.filters',
-  'angular-md5'
+  'angular-md5',
+  'chart.js'
 ])
 .config(function (localStorageServiceProvider) {
   localStorageServiceProvider
     .setPrefix('app')
     .setStorageType('sessionStorage');
+})
+.config(function (ChartJsProvider) {
+  ChartJsProvider.setOptions({ colors : [ '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'] });
 })
 .config(["$httpProvider", function ($httpProvider) {
 　 //更改 Content-Type
@@ -59,7 +64,10 @@ angular.module('myApp', [
 
   });
 }])
-.config(function ($stateProvider, $urlRouterProvider) {
+// .config(['$locationProvider', function ($locationProvider) {
+//     $locationProvider.html5Mode(true);
+// }])
+.config(function ($stateProvider, $urlRouterProvider,$locationProvider) {
   $stateProvider
       .state("login", {
           url: "/login",
@@ -81,29 +89,40 @@ angular.module('myApp', [
           url:"/member",
           views:{
               "":{
-                  template:"<div ui-view='detail'></div>"
+                  templateUrl:"./src/templates/monitorViews/member.html"
+              }
+          }
+      })
+      .state("monitor.order",{
+          url:"/orderCurrency",
+          views:{
+              "":{
+                  templateUrl:"./src/templates/monitorViews/orderCurrency.html"
+              }
+          }
+      })
+      .state("monitor.frontNodes",{
+          url:"/frontNodes",
+          views:{
+              "":{
+                  templateUrl:"./src/templates/monitorViews/frontNodes.html"
+              }
+          }
+      })
+      .state("monitor.monitorNodes",{
+          url:"/monitorNodes",
+          views:{
+              "":{
+                  templateUrl:"./src/templates/monitorViews/monitorNodes.html"
               }
           }
       })
 
-      .state("app.page1.welcome",{
-          url:"/welcome",
-          views:{
-              "detail":{
-                  templateUrl:"./src/templates/page1Views/page1_welcome.html"
-              }
-          }
-      })
-      .state("app.page1.welcome.item",{
-          url:"/item",
-          views:{
-              "":{
-                  templateUrl:"./src/templates/tradeViews/trade_welcome_item.html"
-              }
-          }
-      })
+
+
       ;
       $urlRouterProvider.otherwise("/login");
+      // $locationProvider.html5Mode(true);
 })
 
 

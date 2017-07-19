@@ -1,13 +1,66 @@
-html,
-body {
-  height: 100%;
-  width: 100%;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
   margin: 0;
   padding: 0;
 }
+table,
+td,
+tr,
+th {
+  font-size: 12px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 12px;
+  font-weight: normal;
+}
+li {
+  list-style-type: none;
+}
+img {
+  vertical-align: top;
+  border: 0;
+}
+ol,
+ul {
+  list-style: none;
+}
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
 body {
-  font-size: 0.42666667rem;
+  font-family: Arial, 'Times New Roman', SimSun, Sun !important;
+  overflow-x: hidden;
   background-color: #fff;
+  font-size: 16px;
 }
 button {
   outline-width: 0;
@@ -19,22 +72,22 @@ h3 {
   margin-top: 0;
   margin-bottom: 0;
 }
-.f-l {
-  float: left;
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
-.f-r {
-  float: right;
+a:link {
+  text-decoration: none;
 }
-.clear {
-  clear: both;
-  overflow: hidden;
+a:visited {
+  text-decoration: none;
 }
-.w-225 {
-  width: 225px;
+a:hover {
+  text-decoration: none;
 }
-.w-50 {
-  width: 50px;
+a:active {
+  text-decoration: none;
 }
-.flex-1 {
-  flex: 1;
+ul {
+  list-style: none;
 }

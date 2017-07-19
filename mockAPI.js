@@ -21,8 +21,8 @@ var mockApi = function(res, pathname, paramObj, next) {
                 res.end();
                 return ;
 
-            case '/api/user_login/':
-                var data = fs.readFileSync(path.join(mockbase, 'user_login.json'), 'utf-8');
+            case '/api/login':
+                var data = fs.readFileSync(path.join(mockbase, 'login.json'), 'utf-8');
                 res.writeHead(200,{
                     "Content-type":"application/json;charset=UTF-8"
                 });
@@ -30,14 +30,24 @@ var mockApi = function(res, pathname, paramObj, next) {
                 res.end();
                 return ;
 
-            case '/api/mall':
-                var data = fs.readFileSync(path.join(mockbase, 'mall.json'), 'utf-8');
+            case '/api/v2/busiDatas':
+                var data = fs.readFileSync(path.join(mockbase, 'orderLists.json'), 'utf-8');
                 res.writeHead(200,{
                     "Content-type":"application/json;charset=UTF-8"
                 });
                 res.write(data);
                 res.end();
                 return ;
+
+                case '/api/v2/busiDatas/group':
+                var data = fs.readFileSync(path.join(mockbase, 'memberLists.json'), 'utf-8');
+                res.writeHead(200,{
+                    "Content-type":"application/json;charset=UTF-8"
+                });
+                res.write(data);
+                res.end();
+                return ;
+
 
             default:
                 ;

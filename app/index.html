@@ -11,12 +11,15 @@
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 
   <!-- <link rel="stylesheet" href="public/css/iconfont.css"> -->
-  <link rel="stylesheet" href="src/styles/app.css">
   <link rel="stylesheet" href="src/styles/config.css">
+  <link rel="stylesheet" href="src/styles/login.css">
+  <link rel="stylesheet" href="src/styles/app.css">
   <link rel="stylesheet" href="src/styles/directives.css">
   <link rel="stylesheet" href="src/styles/dashboard.css">
+  <link rel="stylesheet" href="src/styles/monitor.css">
 </head>
 <body ng-app="myApp" ng-controller="appCtrl">
+<!-- <base href="/" /> -->
   <div ui-view style="height: 100%;"></div>
   <modal data="modalData">
   </modal>
@@ -31,10 +34,13 @@
   <script src="bower_components/angular-cookies/angular-cookies.js"></script>
   <script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
   <script src="bower_components/angular-md5/angular-md5.min.js"></script>
+  <script src="bower_components/chart.js/dist/Chart.min.js"></script>
+  <script src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
   <!-- endbuild -->
 
   <script src="src/directives/directives.js"></script>
   <script src="src/controllers/appControllers.js"></script>
+  <script src="src/controllers/memberControllers.js"></script>
   <script src="src/services/services.js"></script>
   <script src="src/services/app.util.js"></script>
   <script src="src/services/apiServices.js"></script>

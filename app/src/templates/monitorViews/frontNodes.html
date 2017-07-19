@@ -1,0 +1,103 @@
+<article ng-controller="frontNodesCtrl" class="front-nodes-article">
+  <header>
+    <h2 class="h-title">前置节点维护</h3>
+  </header>
+
+  <div class="items-inline" style="min-width: 1140px;">
+    <div class="flex-item">
+      <span class="item-name">创建时间:</span>
+      <date-picker class="item-content" dt="dateStar"></date-picker> <span class="item-span">~</span> <date-picker class="item-content" dt="dateEnd"></date-picker>
+    </div>
+
+    <div class="flex-item">
+      <span class="item-name" style=" margin-right: 11px">会员:</span>
+      <input type="text"  name="demName" class="item-content" placeholder="请输入订单编号" ng-model="demName" required>
+    </div>
+
+
+    <div class="flex-item">
+      <span class="item-name">前置节点:</span>
+      <input type="text"  name="demName" class="item-content" placeholder="请输入订单编号" ng-model="demName" required>
+    </div>
+
+    <div class="flex-item">
+      <button class="btn btn-primary btn-small">查询</button>
+    </div>
+  </div>
+
+  <h3 class="info-title">监控服务器信息</h3>
+  <hr>
+  <div class="info-content">
+    <p class="info-item">
+      <label for="" class="item-label">服务器IP：</label><span class="item-content-span">172.22.57.51</span>
+      <label for="" class="item-label">服务方名称：</label><span class="item-content-span">晶赞科技</span>
+    </p>
+
+    <p class="info-item">
+      <label for="" class="item-label">需方ID：</label><span class="item-content-span">0000109</span>
+      <label for="" class="item-label">cpu核数：</label><span class="item-content-span">16G</span>
+      <label for="" class="item-label">内存：</label><span class="item-content-span">0000109</span>
+    </p>
+
+    <p class="info-item">
+      <label for="" class="item-label">节点ID：</label><span class="item-content-span">01</span>
+      <label for="" class="item-label">硬盘：</label><span class="item-content-span">16T</span>
+      <label for="" class="item-label">服务类型：</label><span class="item-content-span">需方前置机</span>
+    </p>
+
+    <!-- <p class="info-item"><label for="" class="item-label">服务方名称：</label><span class="item-content-span">晶赞科技</span></p> -->
+
+  </div>
+
+  <div class="chart-container">
+    <div><p class="info-title">性能监控</p> <p class="chart-time"> <span>2017-07-10 05:00</span> ~ <span>2017-07-10 05:40</span></p></div>
+
+    <ul class="chart-ul">
+      <li class="chart-li">
+        <p class="chart-item-name">CPU(%)</p>
+        <p class="chart-item-amoumt">20%</p>
+        <div class="chart"></div>
+      </li>
+      <li class="chart-li">
+        <p class="chart-item-name">内存(%)</p>
+        <p class="chart-item-amoumt">20%</p>
+        <div class="chart"></div>
+      </li>
+      <li class="chart-li">
+        <p class="chart-item-name">硬盘(%)</p>
+        <p class="chart-item-amoumt">20%</p>
+        <div class="chart"></div>
+      </li>
+      <li class="chart-li">
+        <p class="chart-item-name">Load</p>
+        <p class="chart-item-amoumt">20%</p>
+        <div class="chart"></div>
+      </li>
+
+    </ul>
+  </div>
+
+
+  <div class="chart-container">
+    <div><p class="info-title">服务监控</p> <p class="chart-time"> <span>2017-07-10 05:00</span> ~ <span>2017-07-10 05:40</span></p></div>
+
+    <ul class="chart-ul">
+      <li class="chart-li">
+        <p class="chart-item-name">进程数</p>
+        <p class="chart-item-amoumt">30</p>
+        <div class="chart"></div>
+      </li>
+      <li class="chart-li">
+        <p class="chart-item-name">redis</p>
+        <p class="chart-item-amoumt">9028390</p>
+        <div class="chart"></div>
+      </li>
+      <li class="chart-li">
+        <p class="chart-item-name">QPS</p>
+        <p class="chart-item-amoumt">345</p>
+        <div class="chart"></div>
+      </li>
+
+    </ul>
+  </div>
+</article>

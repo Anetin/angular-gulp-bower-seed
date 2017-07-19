@@ -20,7 +20,7 @@
 .sec_drop>li>ul>li{
     height:30px;
     line-height:30px;
-    padding-left:60px;
+    text-align: center;
     font-size:12px;
 }
 
@@ -42,3 +42,33 @@
     font-weight: 100;
     cursor: pointer;
 }
+
+.pagination{
+    height:80px;
+}
+
+.pagination .pageActive{
+    background-color:#DED7D7;
+}
+
+.pagination + label{
+    position:absolute;
+    font-weight:lighter;
+    font-size:12px;
+    margin:30px 0 0 10px;
+}
+
+.pagination span{
+    cursor: pointer;
+    text-align:center;
+    min-width:40px;
+}
+
+.pagination > li > span.active:hover{
+    background-color:#DED7D7;
+}
+
+.pagination > li > a:hover, .pagination > li > span:not(.active):hover{
+    background-color:#2E9BCF;
+}
+

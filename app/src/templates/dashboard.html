@@ -28,14 +28,14 @@
   </header>
 
   <div class="flex-container">
-      <aside ng-if="!aside.shortType" class="aside w-225" ng-controller="dashboardAsideCtrl">
+      <aside ng-if="!aside.shortType" class="aside min-w-170" ng-controller="dashboardAsideCtrl">
           <secondary-dropdown data = "dashboard_nav_datas" cur-state="curState"></secondary-dropdown>
       </aside>
 
       <aside ng-if="!!aside.shortType" class="aside w-50" ng-controller="dashboardAsideCtrl" ng-include="'src/directives/tpls/aside_short.html'">
       </aside>
 
-      <div class="flex-1 bg-2 relative ovf-h" ng-controller="dashboardMainCtrl" ng-init="curView = 'mall'">
+      <div class="flex-1 relative p-lr-20 p-t-30" ng-controller="dashboardMainCtrl" ng-init="curView = 'mall'">
           <div ui-view=""></div>
           <footer class="dls-alert">
               <p class="">

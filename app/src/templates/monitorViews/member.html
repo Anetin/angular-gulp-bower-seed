@@ -1,0 +1,60 @@
+<article class="article-container" ng-controller="memberCtrl">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">今日统计</h3>
+    </div>
+    <div class="panel-body" style="width: 350px">
+      <canvas id="line" class="chart chart-line" chart-data="data"
+      chart-labels="labels" chart-series="series" chart-options="options"
+      chart-dataset-override="datasetOverride" chart-click="onClick">
+      </canvas>
+    </div>
+  </div>
+
+  <div class="items-inline" style="min-width: 1040px;">
+    <div class="flex-item">
+      <span class="item-name">设置起始日期:</span>
+      <date-picker class="item-content" dt="dateStar"></date-picker>
+    </div>
+
+    <div class="flex-item">
+      <span class="item-name">设置终止日期:</span>
+      <date-picker class="item-content" dt="dateEnd"></date-picker>
+    </div>
+
+      <div class="flex-item">
+        <span class="item-name">需方会员:</span>
+        <input type="text"  name="demName" class="item-content" placeholder="请输入需方会员" ng-model="demName" required>
+      </div>
+      <div class="flex-item">
+        <span class="item-name">供方会员:</span>
+        <input type="text"  name="supName" class="item-content" placeholder="请输入供方会员" ng-model="supName" required>
+      </div>
+
+      <div class="flex-item">
+        <button class="btn btn-default btn-small">查询</button>
+      </div>
+  </div>
+
+  <div class="app-tab">
+    <table class="table table-bordered table-striped">
+        <thead>
+          <tr class="primary">
+            <th></th>
+            <th ng-repeat="title in titles">{{title.prop}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in dataList">
+            <td><input type="checkbox" ng-model="item.checked"/></td>
+            <td>{{item.sta_time}}</td>
+            <td>{{item.dem_mem_name}}</td>
+            <td>{{item.sup_mem_name}}</td>
+            <td>{{item.cache_succ_num}}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  <pagination  options="pageOptions" cur-page="curPageNum" sum="totalItems"></pagination>
+
+</article>

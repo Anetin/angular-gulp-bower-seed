@@ -1,0 +1,75 @@
+{
+  "version": "v1.0",
+  "resCode": 0,
+  "resMsg": "success",
+  "data": {
+    "page_no": 1,
+    "page_size": 10,
+    "total_page": 1,
+    "total_count": 6,
+    "first_page": true,
+    "last_page": true,
+    "list": [{
+      "dem_mem_id": "0000109",
+      "sup_mem_id": "0000139",
+      "dem_mem_name": "0000109",
+      "sup_mem_name": "0000109",
+      "req_sup_num": "100000",
+      "cache_succ_num": "99999",
+      "cache_fail_num": "1",
+      "sta_time": "2017-07-10 05:40"
+    },{
+      "dem_mem_id": "0000109",
+      "sup_mem_id": "0000139",
+      "dem_mem_name": "晶赞科技",
+      "sup_mem_name": "神州泰岳",
+      "req_sup_num": "100000",
+      "cache_succ_num": "99999",
+      "cache_fail_num": "1",
+      "sta_time": "2017-07-10 05:40"
+    }
+    ,{
+      "dem_mem_id": "0000109",
+      "sup_mem_id": "0000139",
+      "dem_mem_name": "晶赞科技",
+      "sup_mem_name": "神州泰岳",
+      "req_sup_num": "100000",
+      "cache_succ_num": "99999",
+      "cache_fail_num": "1",
+      "sta_time": "2017-07-10 05:40"
+    }
+    ,{
+      "dem_mem_id": "0000109",
+      "sup_mem_id": "0000139",
+      "dem_mem_name": "晶赞科技",
+      "sup_mem_name": "神州泰岳",
+      "req_sup_num": "100000",
+      "cache_succ_num": "99999",
+      "cache_fail_num": "1",
+      "sta_time": "2017-07-10 05:40"
+    }
+    ,{
+      "dem_mem_id": "0000109",
+      "sup_mem_id": "0000139",
+      "dem_mem_name": "晶赞科技",
+      "sup_mem_name": "神州泰岳",
+      "req_sup_num": "100000",
+      "cache_succ_num": "99999",
+      "cache_fail_num": "1",
+      "sta_time": "2017-07-10 05:40"
+    }
+    ,{
+      "dem_mem_id": "0000109",
+      "sup_mem_id": "0000139",
+      "dem_mem_name": "晶赞科技",
+      "sup_mem_name": "神州泰岳",
+      "req_sup_num": "100000",
+      "cache_succ_num": "99999",
+      "cache_fail_num": "1",
+      "sta_time": "2017-07-10 05:40"
+    }
+
+  ]
+  }
+}
+
