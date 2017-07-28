@@ -1,95 +1,47 @@
-<article ng-controller="orderCtrl" class="order-article">
+<article ng-controller="orderCurrencyCtrl" class="order-article">
   <div class="items-inline" style="min-width: 1040px;">
     <div class="flex-item">
       <span class="item-name">设置起始日期:</span>
-      <date-picker class="item-content" dt="dateStar"></date-picker>
+      <date-picker class="item-content" dt="dateStar" mindt="1970, 5, 22"></date-picker>
     </div>
 
     <div class="flex-item">
       <span class="item-name">设置终止日期:</span>
-      <date-picker class="item-content" dt="dateEnd"></date-picker>
+      <date-picker class="item-content" dt="dateEnd" mindt="1970, 5, 22"></date-picker>
     </div>
 
       <div class="flex-item">
         <span class="item-name">订单编号:</span>
-        <input type="text"  name="demName" class="item-content" placeholder="请输入订单编号" ng-model="demName" required>
+        <select  class="form-control item-content" style="width: 210px;" ng-model="_orderId" ng-options="item for item in orderIds" >
+          <option value="" ng-if="false"></option>
+        </select>
       </div>
 
       <div class="flex-item">
-        <button class="btn btn-default btn-small">查询</button>
+        <button class="btn btn-default btn-small" ng-click="getDatas(2,true)">查询</button>
       </div>
   </div>
 
-  <div class="items-inline">
+  <div class="items-inline" ng-show="summaryDatas.cache_succ_num >= 0">
 
-    <div class="flex-item flex-1">
+    <div class="flex-item flex-1 flex-pannel">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">CTN20170418000014000001090000187</h3>
+          <h3 class="panel-title" ng-bind="summaryDatas.orderId"></h3>
         </div>
         <div class="panel-body">
           <div class="succ">
             <p class="status">加载成功</p>
-            <p class="amount">158600</p>
+            <p class="amount" ng-bind="summaryDatas.cache_succ_num"></p>
           </div>
           <div class="fail">
             <p class="status">加载失败</p>
-            <p class="amount">376</p>
+            <p class="amount" ng-bind="summaryDatas.cache_fail_num"></p>
           </div>
         </div>
       </div>
     </div>
-    <div class="flex-item flex-1">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">CTN20170418000014000001090000187</h3>
-        </div>
-        <div class="panel-body">
-          <div class="succ">
-            <p class="status">加载成功</p>
-            <p class="amount">158600</p>
-          </div>
-          <div class="fail">
-            <p class="status">加载失败</p>
-            <p class="amount">376</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="flex-item flex-1">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">CTN20170418000014000001090000187</h3>
-        </div>
-        <div class="panel-body">
-          <div class="succ">
-            <p class="status">加载成功</p>
-            <p class="amount">158600</p>
-          </div>
-          <div class="fail">
-            <p class="status">加载失败</p>
-            <p class="amount">376</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="flex-item flex-1">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">CTN20170418000014000001090000187</h3>
-        </div>
-        <div class="panel-body">
-          <div class="succ">
-            <p class="status">加载成功</p>
-            <p class="amount">158600</p>
-          </div>
-          <div class="fail">
-            <p class="status">加载失败</p>
-            <p class="amount">376</p>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
 
 
 
@@ -108,19 +60,20 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="item in dataList">
+          <tr ng-repeat="item in detailDatas" ng-show="!!detailDatas">
             <td><input type="checkbox" ng-model="item.checked"/></td>
-            <td>{{item[1]}}</td>
-            <td>{{item[2]}}</td>
-            <td>{{item[3]}}</td>
-            <td>{{item[4]}}</td>
-            <td>{{item[5]}}</td>
-            <td>{{item[6]}}</td>
-            <td>{{item[7]}}</td>
-            <td>{{item[8]}}</td>
-            <td>{{item[9]}}</td>
-            <td>{{item[10]}}</td>
+            <td>{{item.sta_time}}</td>
+            <td>{{item.task_id}}</td>
+            <td>{{item.conn_obj_no}}</td>
+            <td>{{item.dem_mem_name}}</td>
+            <td>{{item.sup_mem_name}}</td>
+            <td>{{item.dem_req_num}}</td>
+            <td>{{item.dem_succ_num}}</td>
+            <td>{{item.dem_req_sup_num}}</td>
+            <td>{{item.cache_succ_num}}</td>
+            <td>{{item.cache_fail_num}}</td>
           </tr>
+          <tr ng-show="!detailDatas"><td colspan="{{titles.length+1}}">暂无数据</td></tr>
         </tbody>
       </table>
   </div>

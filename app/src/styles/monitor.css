@@ -2,6 +2,7 @@
   font-size: 12px;
   text-align: center;
   padding: 4px 0;
+  height: 21px;
 }
 .order-article .items-inline {
   margin-top: 15px;
@@ -14,6 +15,7 @@
   font-size: 28px;
   font-weight: bold;
   color: #666;
+  height: 40px;
 }
 .order-article .panel-body .succ {
   float: left;
@@ -27,6 +29,9 @@
   padding: 6px 0;
   width: 50%;
   text-align: center;
+}
+.order-article .flex-pannel {
+  max-width: 300px;
 }
 .monitor-nodes-article .p-info {
   margin: 10px 0;
@@ -42,7 +47,7 @@
   text-align: right;
 }
 .front-nodes-article span.item-content-span {
-  width: 80px;
+  width: 100px;
   text-align: left;
   display: inline-block;
   margin-right: 100px;
@@ -80,9 +85,17 @@
 .front-nodes-article .chart-item-amoumt {
   font-size: 28px;
   color: #666;
+  height: 40px;
+  margin-bottom: 20px;
 }
 .front-nodes-article .chart {
   background-color: #dcdcdc;
   width: 100%;
-  height: 200px;
+  // height: 200px;
+}
+.info-important {
+  font-size: 18px;
+      font-weight: bold;
+      color: #4456e6;
+      margin: 0 20px;
 }

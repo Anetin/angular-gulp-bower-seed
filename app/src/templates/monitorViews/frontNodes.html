@@ -6,22 +6,29 @@
   <div class="items-inline" style="min-width: 1140px;">
     <div class="flex-item">
       <span class="item-name">创建时间:</span>
-      <date-picker class="item-content" dt="dateStar"></date-picker> <span class="item-span">~</span> <date-picker class="item-content" dt="dateEnd"></date-picker>
+      <date-picker class="item-content" dt="dateStar" mindt="1970, 5, 22"></date-picker>
+      <span class="item-span">~</span>
+      <date-picker class="item-content" dt="dateEnd" mindt="1970, 5, 22"></date-picker>
     </div>
 
     <div class="flex-item">
-      <span class="item-name" style=" margin-right: 11px">会员:</span>
-      <input type="text"  name="demName" class="item-content" placeholder="请输入订单编号" ng-model="demName" required>
+      <span class="item-name" style=" margin-right: 11px">会员编号:</span>
+      <select  class="form-control item-content" style="width: 210px;" ng-model="_memId" ng-options="item.mem_id as item.mem_id  for item in memIds" >
+        <option value="" ng-if="false"></option>
+      </select>
     </div>
 
 
     <div class="flex-item">
-      <span class="item-name">前置节点:</span>
-      <input type="text"  name="demName" class="item-content" placeholder="请输入订单编号" ng-model="demName" required>
+      <span class="item-name">前置节点编号:</span>
+      <!-- <input type="text"  name="demName" class="item-content" placeholder="请输入订单编号" ng-model="demName" required> -->
+      <select class="form-control item-content" ng-model="_nodeId" ng-options="item for item in nodeDatas">
+        <option value="" ng-if="false"></option>
+      </select>
     </div>
 
     <div class="flex-item">
-      <button class="btn btn-primary btn-small">查询</button>
+      <button class="btn btn-primary btn-small" ng-click="getDatas()">查询</button>
     </div>
   </div>
 
@@ -29,20 +36,20 @@
   <hr>
   <div class="info-content">
     <p class="info-item">
-      <label for="" class="item-label">服务器IP：</label><span class="item-content-span">172.22.57.51</span>
-      <label for="" class="item-label">服务方名称：</label><span class="item-content-span">晶赞科技</span>
+      <label for="" class="item-label">服务器IP：</label><span class="item-content-span" ng-bind="serverDatas.in_ip"></span>
+      <label for="" class="item-label">服务方名称：</label><span class="item-content-span" ng-bind="serverDatas.name"></span>
     </p>
 
     <p class="info-item">
-      <label for="" class="item-label">需方ID：</label><span class="item-content-span">0000109</span>
-      <label for="" class="item-label">cpu核数：</label><span class="item-content-span">16G</span>
-      <label for="" class="item-label">内存：</label><span class="item-content-span">0000109</span>
+      <label for="" class="item-label">需方ID：</label><span class="item-content-span" ng-bind="serverDatas.mem_id"></span>
+      <label for="" class="item-label">cpu核数：</label><span class="item-content-span" ng-bind="serverDatas.cpu"></span>
+      <label for="" class="item-label">内存：</label><span class="item-content-span" ng-bind="serverDatas.memory"></span>
     </p>
 
     <p class="info-item">
-      <label for="" class="item-label">节点ID：</label><span class="item-content-span">01</span>
-      <label for="" class="item-label">硬盘：</label><span class="item-content-span">16T</span>
-      <label for="" class="item-label">服务类型：</label><span class="item-content-span">需方前置机</span>
+      <label for="" class="item-label">节点ID：</label><span class="item-content-span" ng-bind="serverDatas.node_id"></span>
+      <label for="" class="item-label">硬盘：</label><span class="item-content-span" ng-bind="serverDatas.disk"></span>
+      <label for="" class="item-label">服务类型：</label><span class="item-content-span" ng-bind="serverDatas.svc_type | svcTypeFilter"></span>
     </p>
 
     <!-- <p class="info-item"><label for="" class="item-label">服务方名称：</label><span class="item-content-span">晶赞科技</span></p> -->
@@ -50,28 +57,60 @@
   </div>
 
   <div class="chart-container">
-    <div><p class="info-title">性能监控</p> <p class="chart-time"> <span>2017-07-10 05:00</span> ~ <span>2017-07-10 05:40</span></p></div>
+    <div><p class="info-title">性能监控</p> <p class="chart-time"> <span ng-bind="dateStar | appDateFilter : true"></span> ~ <span ng-bind="dateEnd | appDateFilter : true"></span></p></div>
 
     <ul class="chart-ul">
       <li class="chart-li">
         <p class="chart-item-name">CPU(%)</p>
-        <p class="chart-item-amoumt">20%</p>
-        <div class="chart"></div>
+        <p class="chart-item-amoumt"><span ng-bind="newestPerformanceData.cpu_rate*100 | number:2"></span>%</p>
+        <div class="chart">
+          <div class="panel-body" class="chart-body">
+            <canvas id="line" class="chart chart-line" chart-data="cpuDatas"
+            chart-labels="p_labels" chart-series="series" chart-options="options"
+            chart-dataset-override="datasetOverride" chart-click="onClick">
+            </canvas>
+          </div>
+        </div>
       </li>
       <li class="chart-li">
         <p class="chart-item-name">内存(%)</p>
-        <p class="chart-item-amoumt">20%</p>
-        <div class="chart"></div>
+        <p class="chart-item-amoumt"><span ng-bind="newestPerformanceData.memory_rate*100 | number:2"></span>%</p>
+        <div class="chart">
+          <div class="panel-body" class="chart-body">
+            <canvas id="line" class="chart chart-line" chart-data="memoryDatas"
+            chart-labels="p_labels" chart-series="series" chart-options="options"
+            chart-dataset-override="datasetOverride" chart-click="onClick">
+            </canvas>
+          </div>
+        </div>
       </li>
       <li class="chart-li">
         <p class="chart-item-name">硬盘(%)</p>
-        <p class="chart-item-amoumt">20%</p>
-        <div class="chart"></div>
+        <p class="chart-item-amoumt"><span ng-bind="newestPerformanceData.disk_rate*100 | number:2"></span>%</p>
+        <div class="chart">
+          <div class="panel-body" class="chart-body">
+            <canvas id="line" class="chart chart-line" chart-data="diskDatas"
+            chart-labels="p_labels" chart-series="series" chart-options="options"
+            chart-dataset-override="datasetOverride" chart-click="onClick">
+            </canvas>
+          </div>
+        </div>
       </li>
       <li class="chart-li">
         <p class="chart-item-name">Load</p>
-        <p class="chart-item-amoumt">20%</p>
-        <div class="chart"></div>
+        <p class="chart-item-amoumt">
+          <span ng-bind="newestPerformanceData.load_avg_1 | number:2"></span>/
+          <span ng-bind="newestPerformanceData.load_avg_5 | number:2"></span>/
+          <span ng-bind="newestPerformanceData.load_avg_15 | number:2"></span>
+        </p>
+        <div class="chart">
+          <div class="panel-body" class="chart-body">
+            <canvas id="line" class="chart chart-line" chart-data="load_avg_15Datas"
+            chart-labels="p_labels" chart-series="series" chart-options="options"
+            chart-dataset-override="datasetOverride" chart-click="onClick">
+            </canvas>
+          </div>
+        </div>
       </li>
 
     </ul>
@@ -79,23 +118,44 @@
 
 
   <div class="chart-container">
-    <div><p class="info-title">服务监控</p> <p class="chart-time"> <span>2017-07-10 05:00</span> ~ <span>2017-07-10 05:40</span></p></div>
+    <div><p class="info-title">服务监控</p> <p class="chart-time"> <p class="chart-time"> <span ng-bind="dateStar | appDateFilter : true"></span> ~ <span ng-bind="dateEnd | appDateFilter : true"></span></p></p></div>
 
     <ul class="chart-ul">
       <li class="chart-li">
         <p class="chart-item-name">进程数</p>
-        <p class="chart-item-amoumt">30</p>
-        <div class="chart"></div>
+        <p class="chart-item-amoumt"><span ng-bind="newestservicesDatas.process_num"></span></p>
+        <div class="chart">
+          <div class="panel-body" class="chart-body">
+            <canvas id="line" class="chart chart-line" chart-data="processDatas"
+            chart-labels="s_labels" chart-series="series" chart-options="options"
+            chart-dataset-override="datasetOverride" chart-click="onClick">
+            </canvas>
+          </div>
+        </div>
       </li>
       <li class="chart-li">
         <p class="chart-item-name">redis</p>
-        <p class="chart-item-amoumt">9028390</p>
-        <div class="chart"></div>
+        <p class="chart-item-amoumt"><span ng-bind="newestservicesDatas.redis_mem"></span></p>
+        <div class="chart">
+          <div class="panel-body" class="chart-body">
+            <canvas id="line" class="chart chart-line" chart-data="redisDatas"
+            chart-labels="s_labels" chart-series="series" chart-options="options"
+            chart-dataset-override="datasetOverride" chart-click="onClick">
+            </canvas>
+          </div>
+        </div>
       </li>
       <li class="chart-li">
         <p class="chart-item-name">QPS</p>
-        <p class="chart-item-amoumt">345</p>
-        <div class="chart"></div>
+        <p class="chart-item-amoumt"><span ng-bind="newestservicesDatas.qps_succ"></span></p>
+        <div class="chart">
+          <div class="panel-body" class="chart-body">
+            <canvas id="line" class="chart chart-line" chart-data="qpsDatas"
+            chart-labels="s_labels" chart-series="series" chart-options="options"
+            chart-dataset-override="datasetOverride" chart-click="onClick">
+            </canvas>
+          </div>
+        </div>
       </li>
 
     </ul>

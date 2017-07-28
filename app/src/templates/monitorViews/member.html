@@ -1,38 +1,45 @@
 <article class="article-container" ng-controller="memberCtrl">
-  <div class="panel panel-default">
+  <div class="panel panel-default" style="width: 210px;">
     <div class="panel-heading">
       <h3 class="panel-title">今日统计</h3>
     </div>
     <div class="panel-body" style="width: 350px">
-      <canvas id="line" class="chart chart-line" chart-data="data"
+      <!-- <canvas id="line" class="chart chart-line" chart-data="data"
       chart-labels="labels" chart-series="series" chart-options="options"
       chart-dataset-override="datasetOverride" chart-click="onClick">
-      </canvas>
+      </canvas> -->
+      <p>今日会员流通<span ng-bind="chartDatas.req_sup_num" class="info-important"></span></p>
     </div>
   </div>
 
   <div class="items-inline" style="min-width: 1040px;">
     <div class="flex-item">
       <span class="item-name">设置起始日期:</span>
-      <date-picker class="item-content" dt="dateStar"></date-picker>
+      <date-picker class="item-content" dt="dateStar" mindt="1970, 5, 22"></date-picker>
     </div>
 
     <div class="flex-item">
       <span class="item-name">设置终止日期:</span>
-      <date-picker class="item-content" dt="dateEnd"></date-picker>
+      <date-picker class="item-content" dt="dateEnd" mindt="1970, 5, 22"></date-picker>
     </div>
 
       <div class="flex-item">
         <span class="item-name">需方会员:</span>
-        <input type="text"  name="demName" class="item-content" placeholder="请输入需方会员" ng-model="demName" required>
+        <!-- <input type="text"  name="_demMemId" class="item-content" placeholder="请输入需方会员" ng-model="_demMemId" required> -->
+        <select  class="form-control item-content" style="width: 210px;" ng-model="_demMemId" ng-options="item.mem_id as item.mem_id  for item in demMemIds" >
+          <option value="" ng-if="false"></option>
+        </select>
       </div>
       <div class="flex-item">
         <span class="item-name">供方会员:</span>
-        <input type="text"  name="supName" class="item-content" placeholder="请输入供方会员" ng-model="supName" required>
+        <!-- <input type="text"  name="_supMemId" class="item-content" placeholder="请输入供方会员" ng-model="_supMemId" required> -->
+        <select  class="form-control item-content" style="width: 210px;" ng-model="_supMemId" ng-options="item.mem_id as item.mem_id  for item in supMemIds" >
+          <option value="" ng-if="false"></option>
+        </select>
       </div>
 
       <div class="flex-item">
-        <button class="btn btn-default btn-small">查询</button>
+        <button class="btn btn-default btn-small" ng-click="getDatas()">查询</button>
       </div>
   </div>
 

@@ -1,30 +1,36 @@
 <article ng-controller="monitorNodesCtrl" class="monitor-nodes-article">
   <header>
-    <h3 class="h-title">前置节点维护</h3>
+    <h3 class="h-title">监控节点维护</h3>
   </header>
 
   <div class="items-inline" style="min-width: 1140px;">
     <div class="flex-item">
-      <span class="item-name" style=" margin-right: 11px">会员:</span>
-      <input type="text"  name="demName" class="item-content" placeholder="请输入订单编号" ng-model="demName" required>
+      <span class="item-name" style=" margin-right: 11px">会员编号:</span>
+      <select  class="form-control item-content" ng-model="_memId" ng-options="item.mem_id as item.mem_id  for item in memId" >
+        <option value="" ng-if="false"></option>
+      </select>
     </div>
 
     <div class="flex-item">
       <span class="item-name">节点类型:</span>
-      <!-- <input type="text"  name="demName" class="item-content" placeholder="请输入订单编号" ng-model="demName" required> -->
-      <select class="form-control item-content" class="edit"  name="add-type" ng-model="edit_type">
+      <select class="form-control item-content" class="edit"  name="_nodeType" ng-model="_nodeType">
           <option value="" selected="">请选择</option>
-          <option value="单值列表">单值列表</option>
-          <option value="多值列表">多值列表</option>
-          <option value="分段">分段</option>
-          <option value="命中">命中</option>
-          <option value="数据项">数据项</option>
+          <option value="1">需方</option>
+          <option value="2">供方</option>
       </select>
     </div>
 
     <div class="flex-item">
       <span class="item-name">节点编号:</span>
-      <input type="text"  name="demName" class="item-content" placeholder="请输入订单编号" ng-model="demName" required>
+      <!-- <input type="text"  name="demName" class="item-content" placeholder="请输入订单编号" ng-model="demName" required> -->
+      <select class="form-control item-content" ng-model="_nodeId" ng-options="item for item in nodeDatas">
+        <option value="" ng-if="false">-- 请选择 --</option>
+      </select>
+      <!-- <select class="form-control item-content" class="edit"  name="add-type" ng-model="svcType">
+          <option value="" selected="">请选择</option>
+          <option value="1">需方</option>
+          <option value="2">供方</option>
+      </select> -->
     </div>
 
 
@@ -34,17 +40,17 @@
   <div class="items-inline" style="min-width: 1200px;">
     <div class="flex-item">
       <span class="item-name">节点IP:</span>
-      <input type="text"  name="demName" class="item-content" placeholder="请输入订单编号" ng-model="demName" required>
+      <input type="text"  name="_nodeIp" class="item-content" placeholder="请输入节点IP" ng-model="_nodeIp" required>
     </div>
 
     <div class="flex-item">
       <span class="item-name">创建时间:</span>
-      <date-picker class="item-content" dt="dateStar"></date-picker> <span class="item-span">~</span> <date-picker class="item-content" dt="dateEnd"></date-picker>
+      <date-picker class="item-content" dt="dateStar" mindt="1970, 5, 22"></date-picker> <span class="item-span">~</span> <date-picker class="item-content" dt="dateEnd" mindt="1970, 5, 22"></date-picker>
     </div>
 
     <div class="flex-item">
-      <button class="btn btn-primary btn-small">搜索</button>
-      <button class="btn btn-default btn-small">清除</button>
+      <button class="btn btn-primary btn-small" ng-click="getDatas(true)">搜索</button>
+      <button class="btn btn-default btn-small" ng-click="clearSearchDatas()">清除</button>
     </div>
 
   </div>
@@ -68,10 +74,13 @@
             <td><input type="checkbox" ng-model="item.checked"/></td>
             <td>{{item.in_ip}}</td>
             <td>{{item.name}}</td>
-            <td>{{item.svc_type}}</td>
-            <td>{{item.create_time}}</td>
-            <td>{{item.auto}}</td>
-            <td>{{item.status}}</td>
+            <td>{{item.svc_type | svcTypeFilter}}</td>
+            <td>{{item.create_time | appDateFilter : true}}</td>
+            <td>{{item.creator}}</td>
+            <td>{{item.status | monitorStatusFilter}}</td>
+            <td>{{item.update_time | appDateFilter : true}}</td>
+            <td>{{item.update_user}}</td>
+            <td></td>
           </tr>
         </tbody>
       </table>

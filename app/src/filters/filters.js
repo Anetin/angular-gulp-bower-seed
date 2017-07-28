@@ -19,23 +19,33 @@ angular.module('app.filters', [])
     return out;
   };
 })
-.filter('appDateFilter', function() {
-  return function (date, bool , format) {
+.filter('add0before', function () {
+  return function (input) {
+    if (parseInt(input) < 10) {
+      input = '0' + input;
+    }
+    return input;
+  }
+})
+.filter('appDateFilter', function($filter) {
+  return function (date, bool , format1, format2) {
     date = new Date(date) || new Date();
-    format = format || '-';
+    format1 = format1 || '-';
+    format2 = format2 || ':';
     bool = !!bool || false; //是否需要时分秒
     var out = "";
     if (angular.isDate(date)) {
       var year = date.getFullYear();
-      var mon = 1 + date.getMonth();
-      var day = date.getDate();
-      var hour = date.getHours();
-      var min = date.getMinutes();
-      var sec = date.getSeconds();
+      var mon = $filter('add0before')(1 + date.getMonth());
+      var day = $filter('add0before')(date.getDate());
+      var hour = $filter('add0before')(date.getHours());
+      var min = $filter('add0before')(date.getMinutes());
+      var sec = $filter('add0before')(date.getSeconds());
       if (bool) {
-        out += year + format + mon + format + day + " " + hour + format + min + format + sec;
+        out += year + format1 + mon + format1 + day + " " + hour + format2 + min + format2 + sec;
+        // out += year + format1 + mon + format1 + day + " " + hour + format2 + min;
       } else {
-        out += year + format + mon + format + day;
+        out += year + format1 + mon + format1 + day;
       }
       // console.log(out);
       return out;
@@ -77,4 +87,39 @@ angular.module('app.filters', [])
     return new Date(year,mon,day,hour,min,sec);
   }
 })
+.filter("svcTypeFilter",function(){
+  return function(input){
+    var out = '';
+    input *= 1;
+    switch (input) {
+      case 1:
+        out = '需方前置机';
+        break;
+      case 2:
+        out = '供方前置机';
+        break;
+      default:
+        out = '未知';
 
+    }
+    return out;
+  }
+})
+.filter("monitorStatusFilter",function(){
+  return function(input){
+    var out = '';
+    input *= 1;
+    switch (input) {
+      case 1:
+        out = '监控中';
+        break;
+      case 2:
+        out = '已停止监控';
+        break;
+      default:
+        out = '未知';
+
+    }
+    return out;
+  }
+})

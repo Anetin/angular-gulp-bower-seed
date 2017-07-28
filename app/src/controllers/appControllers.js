@@ -16,6 +16,20 @@ angular.module('myApp.appControllers', [
 
       });
 
+      $scope.$on("reLogin",function(event,data){
+          console.log($state.current.name);
+          $rootScope.redirectState = $state.current.name;
+          $state.go("login");
+      });
+      $scope.$on("denied",function(event,data){
+          $state.go("dls.denied");
+      });
+
+      $scope.$on('setModalState',function(event,data){  //设置全局的模态框
+          $('#myModal').modal('toggle').addClass('modal-mid');
+          $scope.modalData = data;
+      });
+
     }])
     .controller('dashboardCtrl', ['$scope', function ($scope){
       $scope.aside = {};
