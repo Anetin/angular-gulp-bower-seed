@@ -1,0 +1,10 @@
+logs/*
+!.gitkeep
+node_modules/
+app/bower_components/
+.idea
+appDist/
+tmp/
+#app/data/
+tree.txt
+

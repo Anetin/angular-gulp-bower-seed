@@ -1,0 +1,162 @@
+.relative {
+  position: relative;
+}
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+.flex-c {
+  display: flex;
+  flex-direction: column;
+}
+.flex-1 {
+  flex: 1;
+}
+.f-l {
+  float: left;
+}
+.f-r {
+  float: right;
+}
+.clear {
+  clear: both;
+  overflow: hidden;
+}
+.w-225 {
+  width: 225px;
+}
+.w-50 {
+  width: 50px;
+}
+.w-150 {
+  width: 150px;
+}
+.min-w-170 {
+  min-width: 170px;
+}
+.p-lr-20 {
+  padding: 0 20px;
+}
+.p-t-30 {
+  padding-top: 30px;
+}
+.m-l-120 {
+  margin-left: 120px;
+}
+.alert {
+  padding: 6px 12px;
+  margin-bottom: 0;
+}
+article {
+  font-size: 12px;
+}
+.h-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.items-inline {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+.flex-item {
+  margin-right: 20px;
+}
+.flex-item input {
+  height: 34px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 12px;
+}
+.item-name {
+  font-size: 12px;
+  height: 34px;
+  line-height: 34px;
+  vertical-align: top;
+  display: inline-block;
+}
+.item-span {
+  font-size: 12px;
+  height: 34px;
+  line-height: 34px;
+  vertical-align: top;
+}
+.item-content {
+  display: inline-block;
+  width: 150px;
+  position: relative;
+}
+.tab-btn {
+  color: #fff;
+  padding: 2px 7px;
+  font-size: 12px;
+  width: 110px;
+}
+.app-tab {
+  text-align: center;
+  margin-bottom: 60px;
+  margin-top: 10px;
+  overflow-x: scroll;
+}
+.app-tab table {
+  min-width: 1000px;
+}
+.app-table-scroll-container {
+  overflow-x: scroll;
+}
+.app-table-width {
+  margin-bottom: 0;
+}
+tr.primary {
+  background-color: #0068b7;
+}
+.table > thead > tr > th {
+  vertical-align: middle;
+  border-bottom: 1px solid #ded7d7;
+  color: #FFF;
+  font-weight: normal;
+  text-align: center;
+}
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: #f5f5f5;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #fff;
+}
+.app-tab tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: middle !important;
+  border-top: 1px solid #ded7d7;
+  text-align: center;
+  color: #595757;
+}
+.app-tab tbody > tr > td .btn {
+  padding: 0;
+}
+.info-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+.info-content {
+  position: relative;
+}
+.select2-container .select2-selection--single {
+  height: 34px;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 34px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 32px;
+}

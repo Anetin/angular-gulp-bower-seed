@@ -1,0 +1,11 @@
+{
+    "status": 1,
+    "data": [
+        {
+            "username": "admin",
+            "update_time": "2017-04-20 13:14:50",
+            "name": "管理账户"
+        }
+    ],
+    "error": ""
+}

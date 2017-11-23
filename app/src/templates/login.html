@@ -1,0 +1,37 @@
+<div ui-view="login" class="login" ng-controller="loginCtrl" ng-submit="login(credentials)" novalidate>
+    <form name="loginForm" class="panel login-block">
+        <div class="panel-body">
+            <ul class="login-tab">
+                <li class="login-pills active" style="font-weight: bold;">登录</li>
+            </ul>
+            <div class="login-logo"></div>
+            <div input-tab>
+                <div class="login-item">
+                    <span class="login-label">用户名<b class="need">*</b></span>
+                    <div class="login-input">
+                    <span class="iconfont icon-login-account"></span><input type="text" class="login-input-text" ng-model="credentials.username" placeholder="用户名">
+                    </div>
+                </div>
+                <div class="login-item"><span class="login-label">密码<b class="need">*</b></span><div class="login-input"><span class="iconfont icon-login-password"></span><input type="password" class="login-input-text" ng-model="credentials.pwdInput" placeholder="密码"></div>
+                </div>
+            </div>
+
+
+            <div class="login-btn">
+                <button  title="登录" class="login-submit" type="submit" id="logIn">登录</button>
+
+            </div>
+            <div class="help-valid">
+                <span ng-if="credentialsShow">用户名或密码错误！</span>
+                <span ng-if="codeShow">验证码错误！</span>
+            </div>
+        </div>
+    </form>
+
+    <div class="footer">
+        <p class="text-center">
+
+
+        </p>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<ul class="sec_drop" style="position:relative;" ng-repeat="data in datas" style="overflow-y: scroll">
+    <li>
+        <div ng-click="setView($index)">
+            <span class={{data.style}}></span>
+            <span>{{data.name}}</span>
+            <span ng-if="viewObj[$index] == false || !viewObj[$index]" class="glyphicon glyphicon-chevron-right arr"></span>
+            <span ng-if="viewObj[$index] == true" class="glyphicon glyphicon-chevron-down arr"></span>
+        </div>
+
+        <ul ng-show="viewObj[$index] == true">
+            <li ng-class="{true:'active'}[content.action == selectData]" ng-repeat="content in data.contents" ui-sref="{{content.action}}">{{content.name}}</li>
+        </ul>
+    </li>
+</ul>
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>交易监控系统</title>
+  <link rel='icon' href='angular.png.ico ' type=‘image/x-ico’ />
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="bower_components/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="bower_components/select2-bootstrap/select2-bootstrap.css">
+
+  <!-- <link rel="stylesheet" href="public/css/iconfont.css"> -->
+  <link rel="stylesheet" href="src/styles/config.css">
+  <!-- <link rel="stylesheet" href="src/styles/login.css"> -->
+  <link rel="stylesheet" href="src/styles/app.css">
+  <!-- <link rel="stylesheet" href="src/styles/directives.css"> -->
+
+</head>
+<body ng-app="myApp" ng-controller="appCtrl">
+<!-- <base href="/" /> -->
+  <div ui-view style="height: 100%;"></div>
+  <modal data="modalData">
+  </modal>
+  <!-- build:js scripts/vendor.js -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="./angular-locale_zh-cn.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+  <script src="bower_components/angular-md5/angular-md5.min.js"></script>
+  <script src="bower_components/chart.js/dist/Chart.min.js"></script>
+  <script src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
+  <script src="bower_components/select2/dist/js/select2.min.js"></script>
+  <!-- endbuild -->
+
+  <script src="src/directives/directives.js"></script>
+  <script src="src/controllers/appControllers.js"></script>
+  <!-- <script src="src/controllers/monitorControllers.js"></script> -->
+  <script src="src/services/services.js"></script>
+  <script src="src/services/app.util.js"></script>
+  <script src="src/services/apiServices.js"></script>
+  <script src="src/filters/filters.js"></script>
+  <script src="./app.js"></script>
+
+
+</body>
+</html>
+
